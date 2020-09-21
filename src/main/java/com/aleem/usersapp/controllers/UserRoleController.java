@@ -104,7 +104,7 @@ public class UserRoleController {
             userRole.setValidFrom(LocalDateTime.now());
         }
         // if validFrom is after the the validTo timestamp show exception to user
-        if (userRole.getValidTo() != null && userRole.getValidFrom().isAfter(userRole.getValidTo())) {
+        if (userRole.getValidTo() != null && userRole.getValidFrom().isAfter(userRole.getValidTo())) { //Checks if this date-time is after the specified date-time.
             return new ResponseEntity<>("Invalid Timestamps provided", HttpStatus.BAD_REQUEST);
         }
 
